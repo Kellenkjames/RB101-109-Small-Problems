@@ -1,0 +1,16 @@
+#* Multiple Signatures 
+
+# https://docs.ruby-lang.org/en/2.7.0/Array.html#method-i-fetch
+
+# What do each of these puts statements output? 
+
+a = %w(a b c d e) # ['a', 'b', 'c', 'd', 'e']
+
+puts a.fetch(7) 
+# index 7 outside of array bounds
+
+puts a.fetch(7, 'beats me') 
+# 'beats me' 
+
+puts a.fetch(7) { |index| index**2 } 
+# 49
