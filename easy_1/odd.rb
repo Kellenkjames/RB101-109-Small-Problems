@@ -55,7 +55,7 @@ N/A
 #* C - Code
 
 def is_odd?(number)
-  number.abs % 2 == 0 ? false : true 
+  number.abs % 2 == 1
 end 
 
 puts is_odd?(2)    # => false
