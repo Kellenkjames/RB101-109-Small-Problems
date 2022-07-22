@@ -6,11 +6,11 @@
 
 * P - [Understand the] Problem 
 
-* inputs:
+* Inputs:
 - one string
 - one positive integer
 
-* output:
+* Output:
 - string (same object)
 
 * Clarifying Questions: 
