@@ -75,7 +75,7 @@ def repeat_me(string, integer)
 
 end 
 
-repeat_me("Hello", 3)
+repeat_me("Hello", 2)
 # repeat_me("Go to the Store", 2)
 
 
