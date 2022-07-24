@@ -41,9 +41,15 @@ motorcycle => 2
 
 * A - Algorithm 
 
-- create an empty hash
-- create a counter variable
-- iterate over unique values arr
+- call .uniq method on arr and store values to variable "vehicle"
+- create variable "counter" and set to 0 
+- create a loop to iterate over values:
+    - create a current_vehicle variable and assign to index of "vehicle" arr 
+    - create a occurences variable and "count" of vehicles arr - using index as argument
+    - print the current vehicle and number of occurences 
+    - increment counter by 1
+    - break out of loop if counter is equal to arr size of vehicles "uniq" values i.e. ['car', 'truck', 'SUV', 'motorcycle']
+  end 
 
 =end 
 
@@ -52,19 +58,19 @@ motorcycle => 2
 #* C - Code 
 
 def count_occurrences(vehicles)
-    counter = 0
-
-    vehicle = vehicles.uniq
-    puts vehicle
-
-    loop do 
+  
+  vehicle = vehicles.uniq
+  counter = 0
+  
+  loop do 
+      current_vehicle = vehicle[counter]
       occureneces = vehicles.count(vehicle[counter])
-      puts occureneces
+      
+      puts "#{current_vehicle} => #{occureneces}"
+      
       counter += 1
       break if counter == vehicle.size
     end 
-
-
 
 end 
 
