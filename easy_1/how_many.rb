@@ -53,19 +53,19 @@ motorcycle => 2
 
 def count_occurrences(vehicles)
     counter = 0
-  
+
     vehicle = vehicles.uniq
-    
+    puts vehicle
+
     loop do 
-      current_vehicle = vehicle[counter]
-      occurrences = vehicles[counter].count(current_vehicle)
-      
-      puts "#{current_vehicle} => #{occurrences}"
-      
+      occureneces = vehicles.count(vehicle[counter])
+      puts occureneces
       counter += 1
-      break if counter == vehicle.size 
+      break if counter == vehicle.size
     end 
-    
+
+
+
 end 
 
 vehicles = [
