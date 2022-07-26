@@ -58,6 +58,8 @@ motorcycle => 2
 #* C - Code 
 
 def count_occurrences(vehicles)
+
+  vehicles.each { |vehicle| vehicle.downcase! }
   
   vehicle = vehicles.uniq
   counter = 0
@@ -75,8 +77,12 @@ def count_occurrences(vehicles)
 end 
 
 vehicles = [
-  'car', 'car', 'truck', 'car', 'SUV', 'truck',
+  'car', 'car', 'truck', 'car', 'suv', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
 puts count_occurrences(vehicles)
+
+# Further Exploration 
+
+#* Try to solve the problem when words are case insensitive, e.g. "suv == SUV"
