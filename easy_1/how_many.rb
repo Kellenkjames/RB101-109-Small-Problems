@@ -35,21 +35,21 @@ motorcycle => 2
 
 * D - Data Structure 
 
-[] => Array 
+{} => Hash  
 
 ------------------------------------------------------------------------------
 
 * A - Algorithm 
 
-- call .uniq method on arr and store values to variable "vehicle"
-- create variable "counter" and set to 0 
-- create a loop to iterate over values:
-    - create a current_vehicle variable and assign to index of "vehicle" arr 
-    - create a occurences variable and "count" of vehicles arr - using index as argument
-    - print the current vehicle and number of occurences 
-    - increment counter by 1
-    - break out of loop if counter is equal to arr size of vehicles "uniq" values i.e. ['car', 'truck', 'SUV', 'motorcycle']
-  end 
+- create an empty hash {} i.e. occurences 
+- call each method on arr and downcase each element (destructively)
+- iterate over each unique element 
+    - create a new key-value pair in occurences 
+    - assign unique element as 'key'  
+    - assign Array#count of element in array as 'value'
+  - iterate over occurences hash 
+    - set two block parameters i.e. element, count
+  - print the desired output i.e. car => 4
 
 =end 
 
@@ -58,21 +58,18 @@ motorcycle => 2
 #* C - Code 
 
 def count_occurrences(vehicles)
+  occurences = {}
 
-  vehicles.each { |vehicle| vehicle.downcase! }
+  vehicles.each { |element| element.downcase! }
+
+  vehicles.uniq.each do |element|
+    occurences[element] = vehicles.count(element)
+  end
+
+  occurences.each do |element, count|
+    puts "#{element} => #{count}"
+  end 
   
-  vehicle = vehicles.uniq
-  counter = 0
-  
-  loop do 
-      current_vehicle = vehicle[counter]
-      occureneces = vehicles.count(vehicle[counter])
-      
-      puts "#{current_vehicle} => #{occureneces}"
-      
-      counter += 1
-      break if counter == vehicle.size
-    end 
 
 end 
 
@@ -81,8 +78,4 @@ vehicles = [
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
-puts count_occurrences(vehicles)
-
-# Further Exploration 
-
-#* Try to solve the problem when words are case insensitive, e.g. "suv == SUV"
+count_occurrences(vehicles)
